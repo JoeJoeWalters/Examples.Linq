@@ -20,7 +20,11 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<string> resultsFromMethodType = data.Objects.SelectMany(c => c.Children).Select(c => c.CreatedBy).Distinct().ToList();
+            List<string> resultsFromMethodType = data.Objects
+                                                    .SelectMany(c => c.Children)
+                                                    .Select(c => c.CreatedBy)
+                                                    .Distinct()
+                                                    .ToList();
 
             var query = (from o in data.Objects
                          from c in o.Children
@@ -39,7 +43,15 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Grouping> resultsFromMethodType = data.Objects.SelectMany(c => c.Children).GroupBy(c => c.CreatedBy).Select(group => new Grouping() { Count = group.Count(), Key = group.Key }).ToList();
+            List<Grouping> resultsFromMethodType = data.Objects
+                                                    .SelectMany(c => c.Children)
+                                                    .GroupBy(c => c.CreatedBy)
+                                                    .Select(group => new Grouping()
+                                                    {
+                                                        Count = group.Count(),
+                                                        Key = group.Key
+                                                    })
+                                                    .ToList();
 
             var query = from o in data.Objects
                         from c in o.Children

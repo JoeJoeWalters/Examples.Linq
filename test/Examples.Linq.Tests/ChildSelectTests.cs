@@ -13,7 +13,9 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsFromMethodType = data.Objects.SelectMany(c => c.Children).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects
+                                                        .SelectMany(c => c.Children)
+                                                        .ToList();
 
             var query = from o in data.Objects
                             from c in o.Children
@@ -33,7 +35,10 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsFromMethodType = data.Objects.Where(parent => parent.CreatedOn.Month == 1).SelectMany(c => c.Children).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects
+                                                        .Where(parent => parent.CreatedOn.Month == 1)
+                                                        .SelectMany(c => c.Children)
+                                                        .ToList();
 
             var query = from o in data.Objects
                            from c in o.Children
@@ -54,7 +59,10 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsFromMethodType = data.Objects.SelectMany(c => c.Children).Where(c => c.CreatedOn.Month == 1).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects
+                                                        .SelectMany(c => c.Children)
+                                                        .Where(c => c.CreatedOn.Month == 1)
+                                                        .ToList();
 
             var query = from o in data.Objects
                            from c in o.Children
@@ -75,7 +83,11 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsFromMethodType = data.Objects.Where(parent => parent.CreatedOn.Month == 1).SelectMany(c => c.Children).Where(c => c.CreatedOn.Month == 1).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects
+                                                        .Where(parent => parent.CreatedOn.Month == 1)
+                                                        .SelectMany(c => c.Children)
+                                                        .Where(c => c.CreatedOn.Month == 1)
+                                                        .ToList();
 
             var query = from o in data.Objects
                         from c in o.Children
