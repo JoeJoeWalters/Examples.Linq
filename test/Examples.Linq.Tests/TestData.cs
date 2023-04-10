@@ -13,6 +13,8 @@ namespace Examples.Linq.Tests
 
         public readonly int JanuaryChildObjects = 4;
         public readonly int FebruaryChildObjects = 4;
+        public readonly int TotalAuthors = 2;
+        public readonly int AuthorOccorances = 4;
 
         public TestData() 
         {
