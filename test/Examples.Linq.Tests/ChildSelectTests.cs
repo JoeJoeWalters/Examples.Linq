@@ -13,17 +13,17 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsMethod1 = data.Objects.SelectMany(c => c.Children).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects.SelectMany(c => c.Children).ToList();
 
-            var results2 = from o in data.Objects
+            var query = from o in data.Objects
                             from c in o.Children
                             select c;
 
-            List<Level2Object> resultsMethod2 = results2.ToList();
+            List<Level2Object> resultsFromQueryType = query.ToList();
 
             // ASSERT
-            resultsMethod1.Should().HaveCount(8); // Should be X items in the array, the next test will determine the actual data
-            resultsMethod1.Should().BeEquivalentTo(resultsMethod2); // The data should look the same in both methods (Also does the count)
+            resultsFromMethodType.Should().HaveCount(8); // Should be X items in the array, the next test will determine the actual data
+            resultsFromMethodType.Should().BeEquivalentTo(resultsFromQueryType); // The data should look the same in both methods (Also does the count)
         }
 
         [Fact]
@@ -33,18 +33,18 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsMethod1 = data.Objects.Where(parent => parent.CreatedOn.Month == 1).SelectMany(c => c.Children).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects.Where(parent => parent.CreatedOn.Month == 1).SelectMany(c => c.Children).ToList();
 
-            var results2 = from o in data.Objects
+            var query = from o in data.Objects
                            from c in o.Children
                            where o.CreatedOn.Month == 1
                            select c;
 
-            List<Level2Object> resultsMethod2 = results2.ToList();
+            List<Level2Object> resultsFromQueryType = query.ToList();
 
             // ASSERT
-            resultsMethod1.Should().HaveCount(data.JanuaryChildObjects); // Should be X items in the array for just January, the next test will determine the actual data
-            resultsMethod1.Should().BeEquivalentTo(resultsMethod2); // The data should look the same in both methods (Also does the count)
+            resultsFromMethodType.Should().HaveCount(data.JanuaryChildObjects); // Should be X items in the array for just January, the next test will determine the actual data
+            resultsFromMethodType.Should().BeEquivalentTo(resultsFromQueryType); // The data should look the same in both methods (Also does the count)
         }
 
         [Fact]
@@ -54,18 +54,18 @@ namespace Examples.Linq.Tests
             TestData data = new TestData();
 
             // ACT
-            List<Level2Object> resultsMethod1 = data.Objects.SelectMany(c => c.Children).Where(c => c.CreatedOn.Month == 1).ToList();
+            List<Level2Object> resultsFromMethodType = data.Objects.SelectMany(c => c.Children).Where(c => c.CreatedOn.Month == 1).ToList();
 
-            var results2 = from o in data.Objects
+            var query = from o in data.Objects
                            from c in o.Children
                            where c.CreatedOn.Month == 1
                            select c;
 
-            List<Level2Object> resultsMethod2 = results2.ToList();
+            List<Level2Object> resultsFromQueryType = query.ToList();
 
             // ASSERT
-            resultsMethod1.Should().HaveCount(data.JanuaryChildObjects); // Should be X items in the array for just January, the next test will determine the actual data
-            resultsMethod1.Should().BeEquivalentTo(resultsMethod2); // The data should look the same in both methods (Also does the count)
+            resultsFromMethodType.Should().HaveCount(data.JanuaryChildObjects); // Should be X items in the array for just January, the next test will determine the actual data
+            resultsFromMethodType.Should().BeEquivalentTo(resultsFromQueryType); // The data should look the same in both methods (Also does the count)
         }
     }
 }
