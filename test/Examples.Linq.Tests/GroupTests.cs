@@ -1,8 +1,3 @@
-using Examples.Linq.Objects;
-using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks.Dataflow;
-
 namespace Examples.Linq.Tests
 {
     public class Grouping

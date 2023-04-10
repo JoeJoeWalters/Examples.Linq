@@ -1,6 +1,4 @@
 using Examples.Linq.Objects;
-using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Examples.Linq.Tests
 {
