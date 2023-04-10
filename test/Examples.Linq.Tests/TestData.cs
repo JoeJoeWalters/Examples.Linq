@@ -14,7 +14,7 @@ namespace Examples.Linq.Tests
         public readonly int JanuaryChildObjects = 4;
         public readonly int FebruaryChildObjects = 4;
         public readonly int TotalAuthors = 2;
-        public readonly int AuthorOccorances = 4;
+        public readonly int AuthorOccourances = 4;
 
         public TestData() 
         {
@@ -33,28 +33,36 @@ namespace Examples.Linq.Tests
                             Id = Guid.NewGuid().ToString(),
                             Name = "FirstChildObject",
                             CreatedBy = "Joe",
-                            CreatedOn = new DateTime(2023, 1, 1)
+                            CreatedOn = new DateTime(2023, 1, 1),
+                            PeriodFrom = new DateTime(2023, 1, 1),
+                            PeriodTo = new DateTime(2023, 1, 31)
                         },
                         new Level2Object()
                         {
                             Id = Guid.NewGuid().ToString(),
                             Name = "SecondChildObject",
                             CreatedBy = "Joe",
-                            CreatedOn = new DateTime(2023, 1, 2)
+                            CreatedOn = new DateTime(2023, 1, 2),
+                            PeriodFrom = new DateTime(2023, 1, 1),
+                            PeriodTo = new DateTime(2023, 1, 31)
                         },
                         new Level2Object()
                         {
                             Id = Guid.NewGuid().ToString(),
                             Name = "ThirdChildObject",
                             CreatedBy = "Joe",
-                            CreatedOn = new DateTime(2023, 1, 3)
+                            CreatedOn = new DateTime(2023, 1, 3),
+                            PeriodFrom = new DateTime(2023, 1, 1),
+                            PeriodTo = new DateTime(2023, 1, 31)
                         },
                         new Level2Object()
                         {
                             Id = Guid.NewGuid().ToString(),
                             Name = "FourthChildObject",
                             CreatedBy = "Joe",
-                            CreatedOn = new DateTime(2023, 1, 4)
+                            CreatedOn = new DateTime(2023, 1, 4),
+                            PeriodFrom = new DateTime(2023, 1, 1),
+                            PeriodTo = new DateTime(2023, 1, 31)
                         }
                     }
                 },
@@ -71,28 +79,36 @@ namespace Examples.Linq.Tests
                             Id = Guid.NewGuid().ToString(),
                             Name = "FirstChildObject",
                             CreatedBy = "Dave",
-                            CreatedOn = new DateTime(2023, 2, 1)
+                            CreatedOn = new DateTime(2023, 2, 1),
+                            PeriodFrom = new DateTime(2023, 2, 1),
+                            PeriodTo = new DateTime(2023, 2, 28)
                         },
                         new Level2Object()
                         {
                             Id = Guid.NewGuid().ToString(),
                             Name = "SecondChildObject",
                             CreatedBy = "Dave",
-                            CreatedOn = new DateTime(2023, 2, 2)
+                            CreatedOn = new DateTime(2023, 2, 2),
+                            PeriodFrom = new DateTime(2023, 2, 1),
+                            PeriodTo = new DateTime(2023, 2, 28)
                         },
                         new Level2Object()
                         {
                             Id = Guid.NewGuid().ToString(),
                             Name = "ThirdChildObject",
                             CreatedBy = "Dave",
-                            CreatedOn = new DateTime(2023, 2, 3)
+                            CreatedOn = new DateTime(2023, 2, 3),
+                            PeriodFrom = new DateTime(2023, 2, 1),
+                            PeriodTo = new DateTime(2023, 2, 28)
                         },
                         new Level2Object()
                         {
                             Id = Guid.NewGuid().ToString(),
                             Name = "FourthChildObject",
                             CreatedBy = "Dave",
-                            CreatedOn = new DateTime(2023, 2, 4)
+                            CreatedOn = new DateTime(2023, 2, 4),
+                            PeriodFrom = new DateTime(2023, 2, 1),
+                            PeriodTo = new DateTime(2023, 2, 28)
                         }
                     }
                 }

@@ -31,6 +31,7 @@ namespace Examples.Linq.Tests
             resultsFromMethodType.Should().HaveCount(data.TotalAuthors); // Should be X items in the array, the next test will determine the actual data
             resultsFromMethodType.Should().BeEquivalentTo(resultsFromQueryType); // The data should look the same in both methods (Also does the count)
         }
+
         [Fact]
         public void Perform_SubQuery_Returns_Distinct_SubValue_And_Occourances()
         {
@@ -57,7 +58,7 @@ namespace Examples.Linq.Tests
 
             // ASSERT
             resultsFromMethodType.Should().HaveCount(data.TotalAuthors); // Should be X items in the array, the next test will determine the actual data
-            resultsFromMethodType.ForEach(result => result.Count.Should().Be(data.AuthorOccorances)); // Each author should appear Y times
+            resultsFromMethodType.ForEach(result => result.Count.Should().Be(data.AuthorOccourances)); // Each author should appear Y times
             resultsFromMethodType.Should().BeEquivalentTo(resultsFromQueryType); // The data should look the same in both methods (Also does the count)
         }
     }
