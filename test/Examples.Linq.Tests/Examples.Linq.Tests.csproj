@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Examples.Linq.Objects\Examples.Linq.Objects.csproj" />
+    <ProjectReference Include="..\..\src\Examples.Linq.Objects\Examples.Linq.Objects.csproj" />
   </ItemGroup>
 
 </Project>
