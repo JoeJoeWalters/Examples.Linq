@@ -43,7 +43,7 @@ namespace Examples.Linq.Tests
             List<Level2Object> resultsMethod2 = results2.ToList();
 
             // ASSERT
-            resultsMethod1.Should().HaveCount(4); // Should be X items in the array for just January, the next test will determine the actual data
+            resultsMethod1.Should().HaveCount(data.JanuaryChildObjects); // Should be X items in the array for just January, the next test will determine the actual data
             resultsMethod1.Should().BeEquivalentTo(resultsMethod2); // The data should look the same in both methods (Also does the count)
         }
 
@@ -64,7 +64,7 @@ namespace Examples.Linq.Tests
             List<Level2Object> resultsMethod2 = results2.ToList();
 
             // ASSERT
-            resultsMethod1.Should().HaveCount(4); // Should be X items in the array for just January, the next test will determine the actual data
+            resultsMethod1.Should().HaveCount(data.JanuaryChildObjects); // Should be X items in the array for just January, the next test will determine the actual data
             resultsMethod1.Should().BeEquivalentTo(resultsMethod2); // The data should look the same in both methods (Also does the count)
         }
     }

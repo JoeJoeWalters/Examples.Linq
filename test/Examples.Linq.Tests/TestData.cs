@@ -11,6 +11,9 @@ namespace Examples.Linq.Tests
     {
         public List<Level1Object> Objects = new List<Level1Object>();
 
+        public readonly int JanuaryChildObjects = 4;
+        public readonly int FebruaryChildObjects = 4;
+
         public TestData() 
         {
             Objects = new List<Level1Object>()
