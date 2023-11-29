@@ -5,7 +5,7 @@ namespace Examples.Linq.Tests
     public class JoinTests
     {
         [Fact]
-        public void Inner_Join()
+        public void Perform_Inner_Join()
         {
             // ARRANGE
             TestData data = new TestData();
